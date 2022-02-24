@@ -7,6 +7,8 @@ import { allUsersData } from "../../store/actions/users/users";
 const PersonCard = ({ person, setShowEditModal, setselectedPerson }) => {
   const dispatch = useDispatch();
 
+  console.log(person);
+
   const handleEditButton = () => {
     setShowEditModal(true);
     setselectedPerson(person);
@@ -51,6 +53,16 @@ const PersonCard = ({ person, setShowEditModal, setselectedPerson }) => {
           src={`https://mahadi-hotel-mgt.herokuapp.com/${
             person && person.image
           }`}
+          onError={(e) => {
+            if (
+              e.target.src !==
+              "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+            ) {
+              e.target.onerror = null;
+              e.target.src =
+                "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
+            }
+          }}
           alt="person"
         />
         <h3 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
