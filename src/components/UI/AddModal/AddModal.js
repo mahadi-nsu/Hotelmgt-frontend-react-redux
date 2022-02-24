@@ -84,11 +84,13 @@ const AddModal = ({ showAddModal, setShowAddModal, showToast }) => {
           toast.error(result.error?.message, {
             position: "top-center",
             hideProgressBar: true,
+            autoClose: 1000,
           });
         } else {
           toast.error("Something went wrong", {
             position: "top-center",
             hideProgressBar: true,
+            autoClose: 1000,
           });
         }
       });
@@ -96,21 +98,25 @@ const AddModal = ({ showAddModal, setShowAddModal, showToast }) => {
       toast.error("Please, provide a name", {
         position: "top-center",
         hideProgressBar: true,
+        autoClose: 1000,
       });
     } else if (!designation) {
       toast.error("Please, provide a designation", {
         position: "top-center",
         hideProgressBar: true,
+        autoClose: 1000,
       });
     } else if (!description) {
       toast.error("Please, provide a description", {
         position: "top-center",
         hideProgressBar: true,
+        autoClose: 1000,
       });
     } else {
       toast.error("Please, provide a profile image", {
         position: "top-center",
         hideProgressBar: true,
+        autoClose: 1000,
       });
     }
   };
