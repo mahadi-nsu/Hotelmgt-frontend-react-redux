@@ -74,11 +74,13 @@ const EditModal = ({ showEditModal, setShowEditModal, person }) => {
           toast.success(result.data.message, {
             position: "top-center",
             hideProgressBar: true,
+            autoClose: 1000,
           });
         } else if (result.type === "EDIT_USER_FAIL") {
           toast.error(result?.error?.message, {
             position: "top-center",
             hideProgressBar: true,
+            autoClose: 1000,
           });
         }
       });
@@ -86,6 +88,7 @@ const EditModal = ({ showEditModal, setShowEditModal, person }) => {
       toast.error("Fields cannot be empty", {
         position: "top-center",
         hideProgressBar: true,
+        autoClose: 1000,
       });
     }
   };

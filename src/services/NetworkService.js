@@ -1,7 +1,6 @@
 import axios from "axios";
 import { LOCAL_USER_KEY } from "../constants/keys";
 import store from "../store/index";
-import { openErrorModal } from "../store/actions/index";
 
 const instance = axios.create({
   baseURL: "https://mahadi-hotel-mgt.herokuapp.com",

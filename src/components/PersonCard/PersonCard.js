@@ -25,16 +25,19 @@ const PersonCard = ({ person, setShowEditModal, setselectedPerson }) => {
         toast.success(result.data.message, {
           position: "top-center",
           hideProgressBar: true,
+          autoClose: 1000,
         });
       } else if (result?.type === "DELETE_USER_FAIL") {
         toast.error(result.error.message, {
           position: "top-center",
           hideProgressBar: true,
+          autoClose: 1000,
         });
       } else {
         toast.error("Something went wrong", {
           position: "top-center",
           hideProgressBar: true,
+          autoClose: 1000,
         });
       }
     });
