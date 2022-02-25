@@ -112,9 +112,9 @@ const EditModal = ({ showEditModal, setShowEditModal, person }) => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </button>
@@ -172,7 +172,7 @@ const EditModal = ({ showEditModal, setShowEditModal, person }) => {
                   </label>
                   <textarea
                     onChange={handleDescription}
-                    maxlength="120"
+                    maxLength="120"
                     value={description}
                     type="text"
                     name="description"
@@ -193,6 +193,16 @@ const EditModal = ({ showEditModal, setShowEditModal, person }) => {
                         ? preview
                         : `https://mahadi-hotel-mgt.herokuapp.com/${person.image}`
                     }
+                    onError={(e) => {
+                      if (
+                        e.target.src !==
+                        "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                      ) {
+                        e.target.onerror = null;
+                        e.target.src =
+                          "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png";
+                      }
+                    }}
                     alt="ProfileImage"
                   />
                 </div>

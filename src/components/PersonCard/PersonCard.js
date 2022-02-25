@@ -7,19 +7,12 @@ import { allUsersData } from "../../store/actions/users/users";
 const PersonCard = ({ person, setShowEditModal, setselectedPerson }) => {
   const dispatch = useDispatch();
 
-  console.log(person);
-
   const handleEditButton = () => {
     setShowEditModal(true);
     setselectedPerson(person);
   };
 
   const handleDelete = (userId) => {
-    // toast.info("Working", {
-    //   position: "top-center",
-    //   hideProgressBar: true,
-    //   autoClose: 500,
-    // });
     const response = dispatch(userDeleteAction(userId));
     response.then((result) => {
       if (result?.type === "DELETE_USER_SUCCESS") {
